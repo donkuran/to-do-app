@@ -16,7 +16,6 @@
 
     <link rel="stylesheet" href="stylesheet.css" type="text/css" />
     <style>
-      
       article,
       aside,
       details,
@@ -86,7 +85,8 @@
         quotes: \201c \201d \2018 \2019;
       }
       small {
-        font-size: 80%;
+        font-size: 1rem;
+        color: blue;
       }
       sub,
       sup {
@@ -173,21 +173,28 @@
 
       body {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin: 10px;
+        word-wrap: break-word;
       }
 
       h1 {
         font-weight: 600;
         line-height: 1.2;
+        text-align: center;
       }
 
       h2 {
         text-decoration: underline;
         font-size: 1.5rem;
+        margin-bottom: 0%;
       }
 
-      small {
-        color: blue;
+      @media screen and (max-width: 600px) {
+        h1 {
+          font-size: 25px;
+        }
       }
+
 
       button,
       input,
@@ -208,7 +215,7 @@
       button,
       input {
         line-height: normal;
-        caret-color: red;
+        caret-color: blue;
       }
 
       button,
@@ -225,18 +232,7 @@
         margin-top: 0;
         margin-bottom: 10px;
         list-style-type: none;
-      }
-
-      li {
-        cursor: move;
-        border-bottom: 1px solid #eee;
-        font-size: smaller;
-        position: relative;
-      }
-
-      li > input {
-        margin-right: 1.5rem;
-        transform: scale(2);
+        padding-left: 1rem;
       }
 
       li * {
@@ -244,15 +240,24 @@
       }
 
       li {
+        cursor: move;
+        border-bottom: 1px solid #eee;
+        font-size: smaller;
+        position: relative;
         line-height: 2;
         cursor: pointer;
-        cursor: ;
+      }
+
+      li > input {
+        margin-right: 1.5rem;
+        transform: scale(2);
       }
 
       button {
         color: red;
         text-decoration: none;
         float: right;
+        margin-top: 2px;
         border-radius: 10%;
       }
 
@@ -290,6 +295,12 @@
         padding: 0;
         margin: auto;
         word-break: break-all;
+      }
+
+      .container > ul {
+        border: #555 solid 1px;
+        background-color: rgba(212, 209, 209, 0.637);
+        padding: 1rem;
       }
 
       .page-header {
@@ -354,10 +365,10 @@
         </div>
         <section>
           <div class="container">
-            <span>
+            <div>
               <h2>To Do List:</h2>
               <small>(Click to mark complete)</small>
-            </span>
+            </div>
             <ul id="list1">
               <!-- To do items get added dynamically here -->
             </ul>
@@ -365,10 +376,10 @@
         </section>
         <section>
           <div class="container">
-            <span>
+            <div>
               <h2>Completed List:</h2>
               <small>(Double click to add back to To Do List)</small>
-            </span>
+            </div>
             <ul id="list2">
               <!-- To do items get added dynamically here -->
             </ul>
@@ -441,9 +452,11 @@
         $("button.btn").on("click", function () {
           $("li").remove();
         });
-        
-        $('#list1, #list2').sortable();
-      });      
+
+        //Sortable list items
+
+        $("#list1, #list2").sortable();
+      });
     </script>
   </body>
 </html>
