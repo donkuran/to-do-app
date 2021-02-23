@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="stylesheet.css" type="text/css" />
     <style>
+      
       article,
       aside,
       details,
@@ -207,6 +208,7 @@
       button,
       input {
         line-height: normal;
+        caret-color: red;
       }
 
       button,
@@ -241,18 +243,26 @@
         display: inline-block;
       }
 
+      li {
+        line-height: 2;
+        cursor: pointer;
+        cursor: ;
+      }
+
       button {
         color: red;
         text-decoration: none;
         float: right;
-        border-radius: 20%;
+        border-radius: 10%;
       }
 
       /*clear all button*/
 
       .btn {
         font-size: 1.2rem;
-        border-radius: 15%;
+        border-radius: 5%;
+        background-color: red;
+        color: white;
       }
 
       .btn2 {
@@ -368,6 +378,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
       // INSERT CODE HERE
       $(document).ready(function () {
@@ -384,8 +395,8 @@
             // If something is entered
             if ($("input").val().length != 0) {
               let enteredItem = `<li class="list-group-item"><input href="#" type="checkbox" value=""><span>
-                ${$("input").val()}
-              </span><button href="#">X</button></li>`;
+              	  ${$("input").val()}
+              	</span><button href="#">X</button></li>`;
 
               //Capture list items
               $("#list1").prepend(enteredItem);
@@ -430,7 +441,9 @@
         $("button.btn").on("click", function () {
           $("li").remove();
         });
-      });
+        
+        $('#list1, #list2').sortable();
+      });      
     </script>
   </body>
 </html>
