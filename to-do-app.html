@@ -175,6 +175,9 @@
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         margin: 10px;
         word-wrap: break-word;
+        background-image: url(./mountain-music-enkor-decorative-wall-paneling-129201-64_1000.jpg);
+        background-color: rgb(243, 241, 241);
+        background-blend-mode: overlay;
       }
 
       h1 {
@@ -194,7 +197,6 @@
           font-size: 25px;
         }
       }
-
 
       button,
       input,
@@ -258,7 +260,8 @@
         text-decoration: none;
         float: right;
         margin-top: 2px;
-        border-radius: 10%;
+        box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 4px 6px rgba(0, 0, 0, 0.45);
+        border-radius: 50px;
       }
 
       /*clear all button*/
@@ -301,6 +304,8 @@
         border: #555 solid 1px;
         background-color: rgba(212, 209, 209, 0.637);
         padding: 1rem;
+        box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 4px 6px rgba(0, 0, 0, 0.45);
+        border-radius: 10px;
       }
 
       .page-header {
@@ -340,6 +345,11 @@
       #inputField {
         background-color: rgba(224, 255, 255, 0.767);
       }
+
+      i {
+        font-size: smaller;
+      }
+
     </style>
   </head>
   <body>
@@ -387,7 +397,7 @@
         </section>
       </main>
     </div>
-
+    <script src="https://kit.fontawesome.com/8115b40299.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
@@ -407,7 +417,7 @@
             if ($("input").val().length != 0) {
               let enteredItem = `<li class="list-group-item"><input href="#" type="checkbox" value=""><span>
               	  ${$("input").val()}
-              	</span><button href="#">X</button></li>`;
+              	</span><button href="#"><i class="fas fa-trash-alt"></i></button></li>`;
 
               //Capture list items
               $("#list1").prepend(enteredItem);
